@@ -575,8 +575,13 @@ a { color: inherit; text-decoration: none; }
   margin-top: 44px;
   display: grid;
   gap: 24px;
-  grid-template-columns: repeat(2, minmax(0, 420px));
+  grid-template-columns: repeat(3, minmax(0, 340px));
   justify-content: center;
+  align-items: start;
+}
+
+@media (max-width: 1040px) {
+  .precios { grid-template-columns: minmax(0, 420px); }
 }
 
 .precio-card {

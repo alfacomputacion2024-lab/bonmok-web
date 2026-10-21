@@ -21,9 +21,12 @@ nadie. Soporte: **0992 971 938** (WhatsApp).
 | Funciones | 7 tarjetas (links, WhatsApp, estado abierto/cerrado, colores, ubicación, sin comisiones, animaciones del logo) |
 | Cómo funciona | 3 pasos de autoservicio: panel → publicar → biografía |
 | Estilos | 6 paletas: Marino & Celeste, Noche & Azul, Ónix & Oro, Bosque & Menta, Coral & Arena, Violeta & Lilas |
-| Precios | Básico (Gs. 0: 4 colores sueltos o paquete con 2 editables) y Full (Gs. 30.000/mes: panel de colores completo) |
+| Precios | Básico (Gs. 0 / US$ 0), Full (Gs. 30.000 / US$ 5,26) y **Full Plus** (Gs. 51.300 / US$ 9 con hosting y subdominio incluidos) |
 | Preguntas | FAQ con `<details>` (sin JavaScript) |
 | Footer | Soporte, enlaces y nota de independencia de marca |
+
+> 📄 El **plan de negocio** completo (precios en USD y guaraníes, costos de
+> hosting, comparación con el mercado y lanzamiento) está en [`PLAN.md`](PLAN.md).
 
 ## 🗂 Estructura
 
@@ -35,6 +38,7 @@ bonmok_web/
 │   ├── css/styles.css       # Estilos organizados en 10 secciones
 │   └── img/favicon.svg      # Ícono de la pestaña
 ├── README.md
+├── PLAN.md                  # Plan de negocio: precios, costos y lanzamiento
 ├── LICENSE                  # Licencia MIT
 └── .gitignore
 ```

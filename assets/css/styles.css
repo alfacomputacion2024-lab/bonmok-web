@@ -1,0 +1,705 @@
+/* ============================================================
+   BONMOK — Hoja de estilos de la landing
+   Orden del archivo:
+     1. Variables        6. Banda
+     2. Base / reset     7. Secciones y tarjetas
+     3. Utilidades       8. Pasos y estilos de página
+     4. Botones          9. Precios y FAQ
+     5. Header y hero   10. CTA final, footer y responsive
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. VARIABLES (paleta Bonmok: azul marino + celeste + ámbar)
+   ------------------------------------------------------------ */
+:root {
+  /* Colores principales */
+  --navy-900: #050f1f;
+  --navy-800: #071427;
+  --navy-700: #0b1f3c;
+  --navy-600: #10305c;
+  --navy-500: #164076;
+  --celeste: #8ecbff;
+  --celeste-soft: #c3e4ff;
+  --ambar: #ffc24b;         /* acento de acción (botones CTA) */
+  --tinta: #1e2330;         /* texto oscuro sobre claro */
+  --gris-fondo: #f3f6fa;    /* fondo de secciones alternas */
+  --gris-texto: #5d7694;
+  --blanco: #ffffff;
+
+  /* Tipografía y medidas */
+  --fuente: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --fuente-serif: 'Playfair Display', Georgia, serif;
+  --ancho: 1120px;
+  --radio-grande: 26px;
+  --radio-tarjeta: 20px;
+
+  /* Sombras suaves */
+  --sombra: 0 18px 40px rgba(5, 15, 31, .10);
+  --sombra-fuerte: 0 26px 60px rgba(5, 15, 31, .28);
+}
+
+/* ------------------------------------------------------------
+   2. BASE / RESET
+   ------------------------------------------------------------ */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--fuente);
+  color: var(--tinta);
+  background: var(--blanco);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg { display: block; max-width: 100%; }
+
+a { color: inherit; text-decoration: none; }
+
+/* ------------------------------------------------------------
+   3. UTILIDADES DE LAYOUT
+   ------------------------------------------------------------ */
+.container {
+  width: 100%;
+  max-width: var(--ancho);
+  margin: 0 auto;
+  padding: 0 22px;
+}
+
+.container-estrecho { max-width: 760px; }
+
+.seccion { padding: 84px 0; }
+.seccion-gris { background: var(--gris-fondo); }
+
+.seccion-oscura {
+  background: linear-gradient(180deg, var(--navy-700) 0%, var(--navy-800) 100%);
+  color: var(--blanco);
+}
+
+.titulo-seccion {
+  font-size: clamp(28px, 4.4vw, 40px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -.02em;
+  text-align: center;
+}
+
+.sub-seccion {
+  margin: 14px auto 0;
+  max-width: 560px;
+  text-align: center;
+  color: var(--gris-texto);
+  font-size: 17px;
+}
+
+.seccion-oscura .sub-seccion { color: var(--celeste-soft); }
+
+.grilla-3 {
+  margin-top: 44px;
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* ------------------------------------------------------------
+   4. BOTONES (píldora, como las grandes plataformas)
+   ------------------------------------------------------------ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 13px 26px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0) scale(.98); }
+
+.btn-lg { padding: 16px 32px; font-size: 16.5px; }
+.btn-sm { padding: 9px 18px; font-size: 13.5px; }
+.btn-block { width: 100%; }
+
+.btn-dark { background: var(--navy-700); color: var(--blanco); }
+.btn-dark:hover { background: var(--navy-600); box-shadow: 0 12px 26px rgba(11, 31, 60, .35); }
+
+.btn-ambar { background: var(--ambar); color: #4a3308; }
+.btn-ambar:hover { box-shadow: 0 12px 26px rgba(255, 194, 75, .5); }
+
+.btn-ghost { border-color: var(--navy-700); color: var(--navy-700); background: transparent; }
+.btn-ghost:hover { background: rgba(11, 31, 60, .06); }
+
+/* ------------------------------------------------------------
+   5. HEADER
+   ------------------------------------------------------------ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, .92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(11, 31, 60, .08);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  height: 70px;
+}
+
+.brand { display: flex; align-items: center; gap: 10px; }
+
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-family: var(--fuente-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--celeste-soft);
+  background: linear-gradient(145deg, var(--navy-600), var(--navy-800));
+  box-shadow: 0 6px 16px rgba(7, 20, 39, .35);
+}
+
+.brand-name { font-weight: 800; font-size: 19px; letter-spacing: -.01em; }
+
+.nav { display: flex; gap: 24px; margin-left: auto; font-weight: 500; font-size: 15px; }
+.nav a { color: var(--gris-texto); transition: color .15s; }
+.nav a:hover { color: var(--navy-700); }
+
+/* ------------------------------------------------------------
+   5b. HERO
+   ------------------------------------------------------------ */
+.hero {
+  background:
+    radial-gradient(50rem 30rem at 115% -10%, rgba(142, 203, 255, .25) 0%, transparent 60%),
+    radial-gradient(40rem 28rem at -15% 110%, rgba(22, 64, 118, .18) 0%, transparent 60%),
+    var(--blanco);
+  padding: 70px 0 90px;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--navy-500);
+  background: rgba(142, 203, 255, .18);
+  border: 1px solid rgba(22, 64, 118, .18);
+  border-radius: 999px;
+  padding: 7px 16px;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-size: clamp(34px, 5.6vw, 56px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -.025em;
+}
+
+.destacado {
+  font-family: var(--fuente-serif);
+  font-style: italic;
+  font-weight: 600;
+  color: var(--navy-500);
+}
+
+.lead {
+  margin-top: 20px;
+  font-size: 18px;
+  color: var(--gris-texto);
+  max-width: 520px;
+}
+
+.lead em { color: var(--navy-500); font-style: normal; font-weight: 600; }
+
+.hero-acciones { margin-top: 30px; display: flex; gap: 14px; flex-wrap: wrap; }
+
+.hero-trust {
+  margin-top: 26px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  list-style: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy-600);
+}
+
+/* --- Maqueta de celular (solo CSS, muestra una página Bonmok) --- */
+.hero-vista { position: relative; display: grid; place-items: center; }
+
+.hero-halo {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(142, 203, 255, .35) 0%, transparent 65%);
+  filter: blur(8px);
+  z-index: 0;
+}
+
+.celular {
+  position: relative;
+  z-index: 1;
+  width: 300px;
+  padding: 12px;
+  border-radius: 42px;
+  background: var(--navy-900);
+  box-shadow: var(--sombra-fuerte);
+}
+
+.celular-pantalla {
+  border-radius: 32px;
+  padding: 34px 20px 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-height: 520px;
+}
+
+/* Mini-componentes reutilizados por la maqueta y la sección de estilos */
+.mini-chip {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--p-acento-suave);
+  border: 1px solid var(--p-acento-borde);
+  background: var(--p-acento-fondo);
+  border-radius: 999px;
+  padding: 5px 12px;
+}
+
+.mini-logo {
+  margin-top: 8px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: var(--fuente-serif);
+  font-style: italic;
+  font-size: 34px;
+  color: var(--p-acento);
+  border: 2px solid var(--p-acento-borde);
+  box-shadow: 0 0 26px var(--p-brillo);
+}
+
+.mini-lema {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--p-texto);
+  text-align: center;
+}
+
+.mini-lema em { color: var(--p-acento); font-family: var(--fuente-serif); font-size: 14px; }
+
+.mini-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--blanco);
+  color: #0b1f3c;
+  border-radius: 999px;
+  padding: 9px 12px;
+  font-size: 11.5px;
+  font-weight: 700;
+  box-shadow: 0 8px 18px rgba(2, 10, 24, .28);
+}
+
+.mini-btn b { margin-left: auto; color: var(--p-acento-fuerte); }
+
+/* Puntitos de ícono (decorativos, sin logos de marcas) */
+.mini-btn i {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--navy-700);
+  flex: 0 0 auto;
+  position: relative;
+}
+
+.mini-btn i::after {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border-radius: 50%;
+  border: 1.6px solid #fff;
+}
+
+.ico-ig::after { border-radius: 5px !important; }
+.ico-pin::after { border-radius: 50% 50% 50% 0 !important; transform: rotate(-45deg); }
+
+.mini-pie {
+  margin-top: auto;
+  font-family: var(--fuente-serif);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--p-texto);
+}
+
+.mini-estado {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--p-texto-suave);
+}
+
+.mini-estado .punto {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #3ddc97;
+  box-shadow: 0 0 0 3px rgba(61, 220, 151, .25);
+}
+
+/* --- Paletas de las maquetas (las mismas que ofrece el producto) --- */
+.paleta-marino {
+  --p-acento: #8ecbff;
+  --p-acento-suave: #c3e4ff;
+  --p-acento-borde: rgba(142, 203, 255, .38);
+  --p-acento-fondo: rgba(142, 203, 255, .10);
+  --p-acento-fuerte: #164076;
+  --p-brillo: rgba(142, 203, 255, .45);
+  --p-texto: #eaf3fc;
+  --p-texto-suave: #8fb3d9;
+  background: radial-gradient(30rem 20rem at 50% -10%, #164076 0%, transparent 60%), #071427;
+}
+
+.paleta-azul {
+  --p-acento: #4c8dff;
+  --p-acento-suave: #a9c6ff;
+  --p-acento-borde: rgba(76, 141, 255, .40);
+  --p-acento-fondo: rgba(76, 141, 255, .12);
+  --p-acento-fuerte: #123a8f;
+  --p-brillo: rgba(76, 141, 255, .45);
+  --p-texto: #eaf1ff;
+  --p-texto-suave: #8fb0dd;
+  background: radial-gradient(30rem 20rem at 50% -10%, #123a8f 0%, transparent 60%), #050b1a;
+}
+
+.paleta-oro {
+  --p-acento: #e9b64d;
+  --p-acento-suave: #f6d99a;
+  --p-acento-borde: rgba(233, 182, 77, .42);
+  --p-acento-fondo: rgba(233, 182, 77, .10);
+  --p-acento-fuerte: #6b4d16;
+  --p-brillo: rgba(233, 182, 77, .40);
+  --p-texto: #f7efe0;
+  --p-texto-suave: #c9b99a;
+  background: radial-gradient(30rem 20rem at 50% -10%, #2a2317 0%, transparent 60%), #0a0a0d;
+}
+
+/* ------------------------------------------------------------
+   6. BANDA DE ZONAS
+   ------------------------------------------------------------ */
+.banda {
+  background: var(--navy-700);
+  color: var(--blanco);
+  padding: 22px 0;
+}
+
+.banda-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.banda-inner ul {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  list-style: none;
+  font-size: 14px;
+  color: var(--celeste-soft);
+}
+
+.banda-inner li { position: relative; padding-left: 16px; }
+.banda-inner li::before { content: "✦"; position: absolute; left: 0; color: var(--celeste); font-size: 11px; }
+
+/* ------------------------------------------------------------
+   7. TARJETAS DE FUNCIONES
+   ------------------------------------------------------------ */
+.tarjeta {
+  background: var(--blanco);
+  border: 1px solid rgba(11, 31, 60, .08);
+  border-radius: var(--radio-tarjeta);
+  padding: 28px 24px;
+  box-shadow: var(--sombra);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.tarjeta:hover { transform: translateY(-4px); box-shadow: 0 26px 50px rgba(5, 15, 31, .14); }
+
+.tarjeta-ico {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  font-size: 24px;
+  background: rgba(142, 203, 255, .16);
+  margin-bottom: 16px;
+}
+
+.tarjeta h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+.tarjeta p { color: var(--gris-texto); font-size: 15px; }
+
+/* ------------------------------------------------------------
+   8. PASOS ("cómo funciona") Y TARJETAS DE ESTILOS
+   ------------------------------------------------------------ */
+.pasos {
+  margin-top: 44px;
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.paso {
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(142, 203, 255, .18);
+  border-radius: var(--radio-tarjeta);
+  padding: 28px 24px;
+}
+
+.paso-num {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--navy-900);
+  background: var(--ambar);
+  margin-bottom: 16px;
+}
+
+.paso h3 { font-size: 18px; margin-bottom: 8px; }
+.paso p { color: var(--celeste-soft); font-size: 15px; }
+
+.estilo-card {
+  background: var(--blanco);
+  border: 1px solid rgba(11, 31, 60, .08);
+  border-radius: var(--radio-tarjeta);
+  padding: 20px;
+  text-align: center;
+  box-shadow: var(--sombra);
+}
+
+.estilo-card .mini-pantalla {
+  min-height: 240px;
+  border-radius: 16px;
+  padding: 22px 16px;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.estilo-card .mini-logo { width: 46px; height: 46px; font-size: 24px; margin-top: 0; }
+.estilo-card h3 { font-size: 17px; margin-bottom: 6px; }
+.estilo-card p { color: var(--gris-texto); font-size: 14.5px; }
+
+/* ------------------------------------------------------------
+   9. PRECIOS Y FAQ
+   ------------------------------------------------------------ */
+.precios {
+  margin-top: 44px;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(2, minmax(0, 420px));
+  justify-content: center;
+}
+
+.precio-card {
+  position: relative;
+  background: var(--blanco);
+  border: 1px solid rgba(11, 31, 60, .10);
+  border-radius: var(--radio-grande);
+  padding: 34px 30px;
+  box-shadow: var(--sombra);
+}
+
+.precio-destacado {
+  border: 2px solid var(--navy-700);
+  box-shadow: var(--sombra-fuerte);
+}
+
+.etiqueta {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ambar);
+  color: #4a3308;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 6px 16px;
+  white-space: nowrap;
+}
+
+.precio-card h3 { font-size: 20px; }
+
+.precio { margin: 10px 0 4px; }
+.precio-monto { font-size: 42px; font-weight: 800; letter-spacing: -.02em; }
+.precio-per { font-size: 16px; color: var(--gris-texto); font-weight: 600; }
+.precio-nota { color: var(--gris-texto); font-size: 14.5px; margin-bottom: 20px; }
+
+.lista-check { list-style: none; display: grid; gap: 10px; margin-bottom: 26px; }
+.lista-check li { position: relative; padding-left: 28px; font-size: 15px; }
+.lista-check li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--navy-900);
+  background: var(--celeste);
+}
+
+.faq {
+  margin-top: 14px;
+  background: var(--blanco);
+  border: 1px solid rgba(11, 31, 60, .10);
+  border-radius: 16px;
+  padding: 4px 22px;
+  transition: box-shadow .2s;
+}
+
+.faq[open] { box-shadow: var(--sombra); }
+
+.faq summary {
+  cursor: pointer;
+  list-style: none;
+  font-weight: 700;
+  font-size: 16.5px;
+  padding: 18px 30px 18px 0;
+  position: relative;
+}
+
+.faq summary::-webkit-details-marker { display: none; }
+
+.faq summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--navy-500);
+}
+
+.faq[open] summary::after { content: "–"; }
+
+.faq p { padding: 0 0 20px; color: var(--gris-texto); }
+
+/* ------------------------------------------------------------
+   10. CTA FINAL Y FOOTER
+   ------------------------------------------------------------ */
+.cta-final {
+  background:
+    radial-gradient(40rem 24rem at 50% 120%, rgba(142, 203, 255, .22) 0%, transparent 60%),
+    linear-gradient(180deg, var(--navy-800) 0%, var(--navy-900) 100%);
+  color: var(--blanco);
+  padding: 90px 0;
+  text-align: center;
+}
+
+.cta-inner h2 { font-size: clamp(28px, 4.2vw, 42px); font-weight: 800; letter-spacing: -.02em; }
+.cta-inner p { margin: 14px 0 30px; color: var(--celeste-soft); font-size: 17px; }
+
+.site-footer { background: var(--navy-900); color: var(--celeste-soft); padding: 56px 0 26px; }
+
+.footer-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  padding-bottom: 36px;
+  border-bottom: 1px solid rgba(142, 203, 255, .14);
+}
+
+.footer-col { display: grid; gap: 9px; align-content: start; font-size: 14.5px; }
+.footer-col h4 { color: var(--blanco); font-size: 14px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 4px; }
+.footer-col a { color: var(--celeste-soft); transition: color .15s; }
+.footer-col a:hover { color: var(--blanco); }
+.footer-marca p { max-width: 260px; margin-top: 12px; }
+
+.footer-final {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding-top: 22px;
+  font-size: 13px;
+  color: #6f92bb;
+}
+
+.footer-nota { max-width: 480px; }
+
+/* ------------------------------------------------------------
+   RESPONSIVE
+   ------------------------------------------------------------ */
+@media (max-width: 980px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 56px; }
+  .hero-texto { text-align: center; }
+  .lead { margin-left: auto; margin-right: auto; }
+  .hero-acciones, .hero-trust { justify-content: center; }
+  .grilla-3, .pasos { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 760px) {
+  .nav { display: none; }                       /* en celular se prioriza el CTA */
+  .header-inner { justify-content: space-between; }
+  .precios { grid-template-columns: minmax(0, 420px); }
+}
+
+@media (max-width: 560px) {
+  .seccion { padding: 60px 0; }
+  .grilla-3, .pasos { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .btn-lg { width: 100%; }
+}
+
+/* Accesibilidad: respeta la preferencia de menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}

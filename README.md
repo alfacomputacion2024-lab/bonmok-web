@@ -4,6 +4,10 @@ Página institucional de **Bonmok**, el servicio de páginas de enlaces (link in
 para negocios de Paraguay. 100% **HTML + CSS**, sin frameworks, sin JavaScript y
 con código comentado para que sea fácil de mantener.
 
+Modelo **100 % autoservicio**: cualquiera arma su página en el panel
+(`crear.html`), la descarga y la publica por su cuenta, sin intervención de
+nadie. Soporte: **0992 971 938** (WhatsApp).
+
 > Inspirada en el esquema de las páginas de servicios "link in bio" del mercado
 > (hero con maqueta de celular, grilla de funciones, estilos, precios, FAQ y CTA).
 > Es una creación original: textos, colores y diseño propios, sin uso de marcas
@@ -13,19 +17,20 @@ con código comentado para que sea fácil de mantener.
 
 | Sección | Descripción |
 |---|---|
-| Hero | Titular + CTA a WhatsApp + maqueta de celular 100% CSS |
+| Hero | Titular + CTA al panel + maqueta de celular 100% CSS con logo animado |
 | Funciones | 7 tarjetas (links, WhatsApp, estado abierto/cerrado, colores, ubicación, sin comisiones, animaciones del logo) |
-| Cómo funciona | 3 pasos |
+| Cómo funciona | 3 pasos de autoservicio: panel → publicar → biografía |
 | Estilos | 6 paletas: Marino & Celeste, Noche & Azul, Ónix & Oro, Bosque & Menta, Coral & Arena, Violeta & Lilas |
 | Precios | Básico (Gs. 0: 4 colores sueltos o paquete con 2 editables) y Full (Gs. 30.000/mes: panel de colores completo) |
 | Preguntas | FAQ con `<details>` (sin JavaScript) |
-| Footer | Contacto, enlaces y nota de independencia de marca |
+| Footer | Soporte, enlaces y nota de independencia de marca |
 
 ## 🗂 Estructura
 
 ```
 bonmok_web/
 ├── index.html               # Página completa (HTML semántico y comentado)
+├── crear.html               # Panel de edición autoservicio (copia de bonmok_angelo/admin.html)
 ├── assets/
 │   ├── css/styles.css       # Estilos organizados en 10 secciones
 │   └── img/favicon.svg      # Ícono de la pestaña
@@ -50,20 +55,27 @@ python -m http.server 8000
    → rama `main`, carpeta `/ (root)` → **Save**.
 3. En unos minutos queda publicada en:
    `https://alfacomputacion2024-lab.github.io/bonmok-web/`
+4. Con esto el botón **"Creá tu página"** queda funcionando: lleva a
+   `crear.html` (el panel autoservicio) en la misma dirección.
 
 ## ✏️ Cómo personalizarla
 
 - **Colores:** editá las variables del bloque `:root` al inicio de `styles.css`.
 - **Textos y precios:** todo el contenido está en `index.html`, en orden de sección.
-- **Número de WhatsApp:** buscá `wa.me/595985296032` y reemplazalo por el número deseado.
+- **Números de contacto:** `wa.me/595985296032` es el de ventas (botón del Plan Full);
+  `wa.me/595992971938` es el de soporte (FAQ y footer).
 - **Logo:** la "B" es texto dentro de `<span class="brand-mark">`; podés reemplazarla
   por un `<img>` si ya tenés el archivo definitivo.
 
 ## 🧩 Relación con el producto
 
-La landing comercializa **Bonmok**, el editor de páginas de enlaces que vive en el
-otro proyecto (`bonmok_angelo`): el panel `admin.html` genera las páginas que se
-venden desde esta landing.
+La landing comercializa **Bonmok**, el editor de páginas de enlaces **autoservicio**:
+el panel (`crear.html`, copia de `admin.html` del proyecto `bonmok_angelo`) genera
+las páginas que el cliente publica por su cuenta. Quien contrata el Plan Full
+activa las funciones con un código de Bonmok; el soporte es al **0992 971 938**.
+
+> ⚠️ Si cambiás el panel original, volvé a copiarlo como `crear.html`
+> (`Copy-Item admin.html crear.html`) y hacé push para mantenerlos al día.
 
 ## 📄 Licencia
 

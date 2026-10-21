@@ -415,6 +415,42 @@ a { color: inherit; text-decoration: none; }
   background: radial-gradient(30rem 20rem at 50% -10%, #2a2317 0%, transparent 60%), #0a0a0d;
 }
 
+.paleta-bosque {
+  --p-acento: #6ed9a0;
+  --p-acento-suave: #b7f0d2;
+  --p-acento-borde: rgba(110, 217, 160, .38);
+  --p-acento-fondo: rgba(110, 217, 160, .10);
+  --p-acento-fuerte: #0f4a35;
+  --p-brillo: rgba(110, 217, 160, .40);
+  --p-texto: #eafaf1;
+  --p-texto-suave: #8fc9ab;
+  background: radial-gradient(30rem 20rem at 50% -10%, #0f4a35 0%, transparent 60%), #04150f;
+}
+
+.paleta-coral {
+  --p-acento: #ff8f6b;
+  --p-acento-suave: #ffd2c2;
+  --p-acento-borde: rgba(255, 143, 107, .40);
+  --p-acento-fondo: rgba(255, 143, 107, .10);
+  --p-acento-fuerte: #5c2418;
+  --p-brillo: rgba(255, 143, 107, .38);
+  --p-texto: #fdeee8;
+  --p-texto-suave: #d3a294;
+  background: radial-gradient(30rem 20rem at 50% -10%, #5c2418 0%, transparent 60%), #170b08;
+}
+
+.paleta-violeta {
+  --p-acento: #b79aff;
+  --p-acento-suave: #ddd0ff;
+  --p-acento-borde: rgba(183, 154, 255, .40);
+  --p-acento-fondo: rgba(183, 154, 255, .10);
+  --p-acento-fuerte: #3a2a7a;
+  --p-brillo: rgba(183, 154, 255, .38);
+  --p-texto: #f1ecff;
+  --p-texto-suave: #a99ad0;
+  background: radial-gradient(30rem 20rem at 50% -10%, #3a2a7a 0%, transparent 60%), #0d0a1f;
+}
+
 /* ------------------------------------------------------------
    6. BANDA DE ZONAS
    ------------------------------------------------------------ */

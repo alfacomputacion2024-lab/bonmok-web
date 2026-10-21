@@ -16,8 +16,8 @@ con código comentado para que sea fácil de mantener.
 | Hero | Titular + CTA a WhatsApp + maqueta de celular 100% CSS |
 | Funciones | 6 tarjetas (links, WhatsApp, estado abierto/cerrado, colores, ubicación, sin comisiones) |
 | Cómo funciona | 3 pasos |
-| Estilos | 3 paletas de ejemplo: Marino & Celeste, Noche & Azul, Ónix & Oro |
-| Precios | Básico (Gs. 0) y Full (Gs. 30.000/mes) |
+| Estilos | 6 paletas: Marino & Celeste, Noche & Azul, Ónix & Oro, Bosque & Menta, Coral & Arena, Violeta & Lilas |
+| Precios | Básico (Gs. 0: 4 colores sueltos o paquete con 2 editables) y Full (Gs. 30.000/mes: panel de colores completo) |
 | Preguntas | FAQ con `<details>` (sin JavaScript) |
 | Footer | Contacto, enlaces y nota de independencia de marca |
 

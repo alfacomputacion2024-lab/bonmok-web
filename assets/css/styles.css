@@ -307,6 +307,11 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 0 26px var(--p-brillo);
 }
 
+/* Demo en vivo de la función de animaciones: el logo de la maqueta rebota,
+   igual que el "rebote" del Plan Básico de Bonmok */
+.celular-pantalla .mini-logo { animation: demo-rebote 1.4s ease-in-out infinite; }
+@keyframes demo-rebote { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+
 .mini-lema {
   font-size: 12.5px;
   font-weight: 600;
@@ -737,5 +742,10 @@ a { color: inherit; text-decoration: none; }
 /* Accesibilidad: respeta la preferencia de menos movimiento */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  * { transition: none !important; }
+  * { transition: none !important; animation: none !important; }
+}
+
+/* En escritorio (3 columnas) la séptima tarjeta sola se centra */
+@media (min-width: 981px) {
+  .grilla-3 .tarjeta:last-child:nth-child(3n+1) { grid-column: 2; }
 }
